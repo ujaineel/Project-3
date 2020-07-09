@@ -3,7 +3,6 @@ require_once "pdo.php";
 
 if(isset($_POST["name"]))
 {
-    $name = $_POST["name"];
     try
     {
         $pdo->beginTransaction();
@@ -11,19 +10,6 @@ if(isset($_POST["name"]))
                 VALUES (:name)";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(':name', $_POST["name"]);
-        $statement->execute();
-
-        $name = $_POST["name"];
-
-        $dexNum = rand(1,151);
-        $last_id = $pdo->lastInsertId();
-
-        $sql = "INSERT INTO hasteam (TrainerNo, DexNum)
-                VALUES (:trainernum, :dexnum)";
-
-        $statement = $pdo->prepare($sql);
-        $statement->bindValue(':trainernum', $last_id);
-        $statement->bindValue(':dexnum', $dexNum);
         $statement->execute();
 
         $pdo->commit();
@@ -36,5 +22,6 @@ if(isset($_POST["name"]))
     $connString = null;
     $pdo = null;
 }
-header("location:proj3.html");
+
+header("location:proj3_2.html");
 ?>

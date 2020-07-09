@@ -10,16 +10,20 @@
 <body>
 
 	<div class="center hideForm">
-		<button id="close" style="float: right;">X</button>
-		<form action="createUser.php" method="post">
-			<p style="color:white">Enter Your Trainer Name:</p>
+		<img id="oak" src="img/profOak.png">
+
+		<p id="introText">Hello there! Welcome to the world of Pokemon! My name is Oak! People call me the Pokemon Prof! This world is inhabited by creatures called Pokemon! For some people, Pokemon are pets. Others use them for fights. Myself...I study Pokemon as a profession. First, what is your name?</p><br><br>
+
+		<form id="form" action="createUser.php" method="post">
+			<p style="color:black">Enter Your Trainer Name:</p>
 			<input type="text" name="name" value=""><br>
-			<input type="submit">
+			<button type="submit" id="submit">Enter</button>
 		</form>
 	</div>
 
 	<h1 class="title">Pokemon Battle!</h1>
 	<button class="press" id="create">Create Trainer</button>
+	<button class="press" id="choose">Choose Starter</button>
 	<button class="press" id="train">Train</button>
 	<button class="press" id="fight">Fight</button>
 	<button class="press" id="controls">Controls</button>

@@ -24,7 +24,7 @@ body
 	position: absolute;
 	left: calc(50% - 125px);
 	cursor: pointer;
-	outline: 1px solid;
+	outline: 2px solid;
 }
 
 .press:hover
@@ -37,38 +37,189 @@ body
 	top: 100px;
 }
 
-#train
+#choose
 {
 	top: 170px;
+	display: none;
+}
+
+#catch
+{
+	top: 240px;
+	display: none;
+}
+
+#train
+{
+	top: 310px;
+	display: none;
 }
 
 #fight
 {
-	top: 240px;
+	top: 380px;
+	display: none;
 }
 
 #controls
 {
-	top: 310px;
+	top: 450px;
+	display: none;
 }
 
 #exit
 {
-	top: 380px;
+	top: 520px;
+	display: none;
+}
+
+#close
+{
+	display: none;
 }
 
 .center
 {
    	margin: auto;
-    width: 60%;
+    width: 700px;
+    height: 270px;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: red;
-    outline: 1px solid;
-
+    background-color: white;
+    outline: 2px solid black;
 }
 
 .hideForm
+{
+	display: none;
+}
+
+p
+{
+	color: black;
+	font-size: 18px;
+}
+
+#oak
+{
+	display: inline-block;
+	vertical-align: top;
+	max-width: 60%;
+	max-height: 60%;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	float: left; 
+}  
+
+#afterName
+{
+	display: none;
+}
+
+#continue
+{
+	display: none;
+}
+
+#selectPokemon
+{
+	display: none;
+}
+
+.bulbasaur
+{
+	display: inline-block;
+	vertical-align: top;
+	max-width: 30%;
+	max-height: 30%;
+	margin-top: 85px;
+	margin-left: 80px;
+	margin-right: 60px;
+	margin-bottom: 10px;
+	float: left; 
+}
+
+.Bulbasaur
+{
+	border: solid;
+	border-radius: 1px;
+	border-color: green;
+}
+
+.charmander
+{
+	display: inline-block;
+	vertical-align: top;
+	max-width: 30%;
+	max-height: 30%;
+	margin-right: 60px;
+	margin-top: 85px;
+	margin-bottom: 10px;
+	float: left; 
+}
+
+.Charmander
+{
+	border: solid;
+	border-radius: 1px;
+	border-color: red;
+}
+
+.squirtle
+{
+	display: inline-block;
+	vertical-align: top;
+	max-width: 30%;
+	max-height: 30%;
+	margin-right: 20px;
+	margin-top: 85px;
+	margin-bottom: 10px;
+	float: left; 	
+}
+
+.Squirtle
+{
+	border: solid;
+	border-radius: 1px;
+	border-color: blue;
+}
+
+.hide
+{
+	display: none;
+}
+
+#goodbye
+{
+	display: none;
+}
+
+#dupeTrainer
+{
+	display: none;
+}
+
+#dupeStarter
+{
+	display: none;
+}
+
+#encounter
+{
+	display: none;
+}
+
+#catchPokemon
+{
+	display: none;
+}
+
+#runAway
+{
+	display: none;
+}
+
+#oakText
 {
 	display: none;
 }

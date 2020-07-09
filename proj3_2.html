@@ -1,0 +1,45 @@
+<!-- This HTML file is used after the user creates a new trainer, it presents them with a new option to choose a starter -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pokemon Battle</title>
+	<link rel="stylesheet" href="proj3.css" type="text/css" media="screen">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="proj3_2.js"></script>
+</head>
+<body>
+
+	<div class="center hideForm">
+		<img id="oak" src="img/profOak.png">
+		<p id="dupeTrainer">I believe we have already met. Good luck on your adventure!</p>
+		<p id="afterName">It's great to meet you. Your very own Pokemon journey is about to begin. A world of dreams and adventures with Pokemon awaits. But first you must choose a Pokemon to accompany you on your adventure.</p>
+		<button id="close">Close</button>
+		<button id="continue">Continue</button>
+
+ 		<p id="oakText">Here are the three Pokemon I have left. Bulbasaur is grass type, Charmander is fire type, and Squirtle is water type. Which do you want to start with?</p>
+ 		<img class="bulbasaur hide" src="img/bulbasaur.png">
+ 		<img class="charmander hide" src="img/charmander.png">
+ 		<img class="squirtle hide" src="img/squirtle.png">
+
+		<form id="select" action="selectStarter.php" method="post">
+			<select id="style" name="starter">
+				<option value="Null">---</option>
+				<option value="Bulbasaur">Bulbasaur</option>
+				<option value="Charmander">Charmander</option>
+				<option value="Squirtle">Squirtle</option>
+			</select>
+			<button type="submit" id="starterSubmit">I choose you!</button>
+		</form>
+
+	</div>
+
+	<h1 class="title">Pokemon Battle!</h1>
+	<button class="press" id="create">Create Trainer</button>
+	<button class="press" id="choose">Choose Starter</button>
+	<button class="press" id="train">Train</button>
+	<button class="press" id="fight">Fight</button>
+	<button class="press" id="controls">Controls</button>
+	<button class="press" id="exit">Exit</button>	
+</body>
+</html>
