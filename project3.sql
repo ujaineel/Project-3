@@ -228,7 +228,7 @@ INSERT INTO `pokemon` (`DexNum`, `Name`, `Type1`, `Type2`, `Total_Stats`, `HP`, 
 
 CREATE TABLE `trainer` (
   `TrainerNo` int(11) NOT NULL,
-  `Name` varchar(300) NOT NULL,
+  `TName` varchar(300) NOT NULL,
   `Money` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
