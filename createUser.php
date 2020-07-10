@@ -6,7 +6,7 @@ if(isset($_POST["name"]))
     try
     {
         $pdo->beginTransaction();
-        $sql = "INSERT INTO trainer (name)
+        $sql = "INSERT INTO trainer (TName)
                 VALUES (:name)";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(':name', $_POST["name"]);

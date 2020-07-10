@@ -1,20 +1,18 @@
 <?php
 require_once "pdo.php";
 
-if(isset($_POST["catchPokemon"]))
-{
+
     try
     {    
         //Random dex number for encounter    
         $randomDex = rand(1,151);
-        echo "$randomDex";
         
         //Check if legendary
         if ($randomDex == 144 || $randomDex == 145 || $randomDex == 146 || $randomDex == 150 || $randomDex == 151)
         {
             //Random chance for legendary
-            $legendaryEncounter = rand(1,5);
-            //20% catch rate
+            $legendaryEncounter = rand(1,20);
+            //5% catch rate
             if ($legendaryEncounter == 1){
                 $caught = 1;
             }
@@ -24,8 +22,8 @@ if(isset($_POST["catchPokemon"]))
         }
         else {
             //Catch rate for all others
-            $normalEncounter = rand(1,2);
-            //50% catch rate
+            $normalEncounter = rand(1,4);
+            //25% catch rate
             if ($normalEncounter == 1){
                 $caught = 1;
             }
@@ -67,40 +65,54 @@ if(isset($_POST["catchPokemon"]))
             $spdef = $result["Sp_Defense"] + $randomLevel;
             $speed = $result["Speed"] + $randomLevel;
 
-            //Sql to insert pokemon for the trainer
-            $caughtsql = "INSERT INTO hasteam (TrainerNo, DexNum, Level, CurHP, CurAtk, CurDef, CurSpAtk, CurSpDef, CurSpeed, EXP)
-                    VALUES (:trainerno, :dexno, :curlev, :hp, :attk, :def, :curspa, :curspd, :curspe, 0)";
+            $src = "img/1st Generation/$dexnum$name.png";
+            echo "You have caught a Level $randomLevel $name!";
+
+            if(isset($_POST["accept"]))
+            {
+                //Sql to insert pokemon for the trainer
+                $caughtsql = "INSERT INTO hasteam (TrainerNo, DexNum, Level, CurHP, CurAtk, CurDef, CurSpAtk, CurSpDef, CurSpeed, EXP)
+                VALUES (:trainerno, :dexno, :curlev, :hp, :attk, :def, :curspa, :curspd, :curspe, 0)";
         
-            //Prepare the sql execution
-            $statement = $pdo->prepare($caughtsql);
-            $statement->bindValue(':trainerno', $trainerid);
-            $statement->bindValue(':dexno', $dexnum);
-            $statement->bindValue(':curlev', $randomLevel);
-            $statement->bindValue(':hp', $HP);
-            $statement->bindValue(':attk', $atk);
-            $statement->bindValue(':def', $def);
-            $statement->bindValue(':curspa', $spatk);
-            $statement->bindValue(':curspd', $spdef);
-            $statement->bindValue(':curspe', $speed);
-            $statement->execute();
+                //Prepare the sql execution
+                $statement = $pdo->prepare($caughtsql);
+                $statement->bindValue(':trainerno', $trainerid);
+                $statement->bindValue(':dexno', $dexnum);
+                $statement->bindValue(':curlev', $randomLevel);
+                $statement->bindValue(':hp', $HP);
+                $statement->bindValue(':attk', $atk);
+                $statement->bindValue(':def', $def);
+                $statement->bindValue(':curspa', $spatk);
+                $statement->bindValue(':curspd', $spdef);
+                $statement->bindValue(':curspe', $speed);
+                $statement->execute();
 
-            //Commit the transaction
-            $pdo->commit();
-
-            echo $name;
+                //Commit the transaction
+                $pdo->commit();
+            }
+            
         }
-        else {
-            echo "You failed to catch anything.";
+        else
+        {
+            //Get stats 
+            $statssql = $pdo->prepare("SELECT * from pokemon WHERE DexNum=?");
+            $statssql->execute([$randomDex]);
+            $result = $statssql->fetch();
+
+            //Save variables
+            $name = $result["Name"];
+
+            $src = "img/1st Generation/$randomDex$name.png";
+            echo "You did not manage to catch a $name.";
         }
     }
     //Catch database timeout exception
     catch(PDOException $e)
     {
-    die($e->getMessage());
+        die($e->getMessage());
     }
 
     $connString = null;
     $pdo = null;
-}
-header("location:proj3_3.html");
+
 ?>

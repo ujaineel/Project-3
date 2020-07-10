@@ -223,3 +223,27 @@ p
 {
 	display: none;
 }
+
+#pokemonEncounter
+{
+	display: none;
+}
+
+#caughtPokemon
+{
+	display: inline-block;
+	vertical-align: top;
+	max-width: 20%;
+	max-height: 20%;
+	margin-left: 50px;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	float: left; 
+}
+
+#accept
+{
+	float: right;
+	margin-top: 190px;
+	size: 30px;
+}

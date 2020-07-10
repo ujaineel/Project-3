@@ -64,5 +64,5 @@ if(isset($_POST["starter"]))
     $connString = null;
     $pdo = null;
 }
-header("location:proj3_3.html");
+header("location:proj3_3.php");
 ?>

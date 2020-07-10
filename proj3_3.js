@@ -7,6 +7,9 @@ $(document).ready(function()
 	$("#controls").show();
 	$("#exit").show();
 	$("#dupeTrainer").hide();
+	$("#pokemonEncounter").hide();
+	$("#caughtPokemon").hide();
+	$("#accept").hide();
 
 	//checks if the user clicked on create trainer
 	$("#create").on("click", function()
@@ -26,6 +29,7 @@ $(document).ready(function()
 		$("#exit").hide();
 		$("#catchPokemon").hide();
 		$("#runAway").hide();
+		$("#pokemonEncounter").hide();
 	});
 
 	//checks if the user clicked on choose starter
@@ -46,6 +50,7 @@ $(document).ready(function()
 		$("#exit").hide();
 		$("#catchPokemon").hide();
 		$("#runAway").hide();
+		$("#pokemonEncounter").hide();
 	});
 
 	//checks if the user clicked the close button
@@ -86,10 +91,27 @@ $(document).ready(function()
 		//if the user chooses to try to catch the wild pokemon
 		$("#catchPokemon").on("click", function()
 		{
-			$("#encounter").show();
+			$("#pokemonEncounter").show();
+			$("#encounter").hide();
 			$("#catchPokemon").hide();
 			$("#runAway").hide();
-			$("#close").show();
+			$("#accept").show();
+			$("#caughtPokemon").show();
+
+			$("#accept").on("click", function()
+			{
+				$("#close").hide();
+				$("#pokemonEncounter").hide();
+				$(".center").hide();
+				$("#oak").hide();
+				$("#create").show();
+				$("#choose").show();
+				$("#catch").show();
+				$("#train").show();
+				$("#fight").show();
+				$("#controls").show();
+				$("#exit").show();
+			});
 		});
 
 		//if the user chooses to run away from the wild pokemon
@@ -107,10 +129,46 @@ $(document).ready(function()
 	});
 
 	//checks if the user clicked on train
+	$("#train").on("click", function()
+	{
+		$(".center").show();
+		$("#oak").show();
+		$("#close").show();
+		$("#currentPokemon").show();
+		$("#create").hide();
+		$("#choose").hide();
+		$("#catch").hide();
+		$("#train").hide();
+		$("#fight").hide();
+		$("#controls").hide();
+		$("#exit").hide();
+		$("#dupeTrainer").hide();
+		$("#dupeStarter").hide();
+		$("#encounter").hide();
+		$("#catchPokemon").hide();
+		$("#runAway").hide();
+	});
 
 	//checks if the user clicked on fight
 
 	//checks if the user clicked on controls
+	$("#controls").on("click", function()
+	{
+		$(".center").show();
+		$("#oak").show();
+		$("#close").show();
+		$("#create").hide();
+		$("#choose").hide();
+		$("#catch").hide();
+		$("#train").hide();
+		$("#fight").hide();
+		$("#controls").hide();
+		$("#exit").hide();
+		$("#dupeTrainer").hide();
+		$("#pokemonEncounter").hide();
+		$("#dupeStarter").hide();
+		$("#encounter").hide();
+	});
 
 	//checks if the user clicked on exit
 	$("#exit").on("click", function()

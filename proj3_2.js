@@ -59,6 +59,7 @@ $(document).ready(function()
 		$("#starterSubmit").show();
 		$("#style").show();
 
+		$(".bulbasaur").addClass("Bulbasaur");
 		//changes the border based on what choice the user is currently on
 		$("#style").change(function()
 		{
