@@ -17,6 +17,7 @@
 		<p id="encounter">You have encountered a wild pokemon!</p>
 		<p id="trainPokemon">Welcome to Oak's Training Ground! What would you like to do?</p>
 		<p id="pokemonChoice">Choose your pokemon and berry for a 20% chance to raise stats!</p>
+		<p id="control">Everything in this game is controlled by mouse input, so anything you want to interact with use left click.</p>
 
 		<button id="catchPokemon" name="catchPokemon">Catch</button>
 		<button id="runAway">Run</button>
@@ -44,6 +45,7 @@
 					<option value = "SpDef">Aspear Berry- Sp Def</option>
 					<option value = "Speed">Leppa Berry- Speed</option>
 				</select>
+				
 				<button type="submit" id="thanksOak" name="thanksOak">Thanks Oak.</button>
 			</p>
 		</form>

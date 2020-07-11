@@ -16,6 +16,8 @@ $(document).ready(function()
 	$("#confirmTrain").hide();
 	$("#leaveTrain").hide();
 	$("#berries").hide();
+	$("#control").hide();
+	$("#listOfPokemon").hide();
 
 	//checks if the user clicked on create trainer
 	$("#create").on("click", function()
@@ -193,6 +195,7 @@ $(document).ready(function()
 			$("#thanksOak").show();
 			$("#accept").hide();
 			$("#berries").show();
+			$("#listOfPokemon").show();
 			
 			$("#thanksOak").on("click", function()
 			{
@@ -230,6 +233,7 @@ $(document).ready(function()
 	{
 		$(".center").show();
 		$("#oak").show();
+		$("#control").show();
 		$("#close").show();
 		$("#create").hide();
 		$("#choose").hide();
@@ -242,6 +246,9 @@ $(document).ready(function()
 		$("#pokemonEncounter").hide();
 		$("#dupeStarter").hide();
 		$("#encounter").hide();
+		$("#trainPokemon").hide();
+		$("#confirmTrain").hide();
+		$("#leaveTrain").hide();
 	});
 
 	//checks if the user clicked on exit
