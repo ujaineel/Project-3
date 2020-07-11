@@ -16,7 +16,7 @@
 		<p id="dupeStarter">I believe you have already received a starter Pokemon from me. Good luck on your adventure!</p>
 		<p id="encounter">You have encountered a wild pokemon!</p>
 		<p id="trainPokemon">Welcome to Oak's Training Ground! What would you like to do?</p>
-		<p id="pokemonChoice">Choose your pokemon and berry for a chance to raise stats!</p>
+		<p id="pokemonChoice">Choose your pokemon and berry for a 20% chance to raise stats!</p>
 
 		<button id="catchPokemon" name="catchPokemon">Catch</button>
 		<button id="runAway">Run</button>
@@ -26,7 +26,7 @@
 				<?php include "catchPokemon.php";?>
 			</p>
 			<img id="caughtPokemon" src="<?php echo $src;?>">
-			<button type="submit" id="accept">Accept</button>
+			<button type="submit" id="accept" name = "accept">Accept</button>
 			<button id="close">Next</button>
 		</form>
 
@@ -36,7 +36,7 @@
 		<form id="trainForm" method="post">
 			<p id ="trainingSession">
 				<?php include "listPokemon.php";?>
-				<select name = "berries">
+				<select id = "berries" name = "berries">
 					<option value = "HP">Oran Berry - HP</option>
 					<option value = "Atk">Cheri Berry - Att</option>
 					<option value = "Def">Chesto Berry - Def</option>
@@ -44,7 +44,7 @@
 					<option value = "SpDef">Aspear Berry- Sp Def</option>
 					<option value = "Speed">Leppa Berry- Speed</option>
 				</select>
-				<button type="submit" id="thanksOak">Thanks Oak.</button>
+				<button type="submit" id="thanksOak" name="thanksOak">Thanks Oak.</button>
 			</p>
 		</form>
 	</div>

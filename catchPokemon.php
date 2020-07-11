@@ -1,5 +1,5 @@
 <?php
-require_once "pdo.php";
+include "pdo.php";
 
 
     try

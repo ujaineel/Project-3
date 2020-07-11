@@ -14,41 +14,45 @@ try
                     NATURAL JOIN pokemon WHERE h.TrainerNo=?");
 	$sql->execute([$trainerid]);
 	$rows = $sql->fetchAll(PDO::FETCH_ASSOC);
-}
-//Catch database timeout exception
-catch(PDOException $e)
-{
-    die($e->getMessage());
-}
-
-$connString = null;
-$pdo = null;
 
 echo "<select name='currentPokemon'>";
 foreach ($rows as $row){
 	$dexNum = $row["DexNum"];
 	$name = $row["Name"];
 	$ID = $row["ID"];
-    $field = "Level: " . $row["Level"] . " " . $row["Name"];
-	echo "<option value='$ID'>$field</option>";
+	$src = 'img/1st Generation/$dexNum$name.png';
+	$field = "Level: " . $row["Level"] . " " . $row["Name"];
+	echo "<option value =$ID>$field</option>"; 
 }
 echo "</select>";
 
-//$randomChance = rand(1,1);
-$randomIncrease = rand(1,5);
+$randomChance = rand(1,1);
+
 
 if(isset($_POST["thanksOak"])){
+	$randomChance = rand(1,5);
+	$randomIncrease = rand(1,5);
 	$stat = $_POST["berries"];
 	$updateID = $_POST["currentPokemon"];
 	$cur = "Cur";
 	$cur .= $stat;
-	echo '<script>console.log("weoutchear")</script>';
-	$sql = $pdo->prepare("SELECT ? FROM hasteam WHERE ID=?");
-	$sql->execute([$cur, $updateID]);
+	$sql = $pdo->prepare("SELECT $cur FROM hasteam WHERE ID=?");
+	$sql->execute([$updateID]);
 	$pokemonStat = $sql->fetchColumn();
-	$pokemonStat+=$randomIncrease;
-
-	$sql = $pdo->prepare("UPDATE hasteam SET ?=? WHERE ID=?");
-	$sql->execute([$cur, $pokemonStat, $updateID]);
+	$pokemonStat += $randomIncrease;
+	if($randomChance == 1)
+	{
+	$sql = $pdo->prepare("UPDATE hasteam SET $cur=? WHERE ID=?");
+	$sql->execute([$pokemonStat, $updateID]);
+	}
 }
+}
+//Catch database timeout exception
+catch(PDOException $e)
+{
+    die($e->getMessage());
+}
+$connString = null;
+$pdo = null;
 ?>
+

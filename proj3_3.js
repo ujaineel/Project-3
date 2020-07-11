@@ -15,6 +15,7 @@ $(document).ready(function()
 	$("#trainingSession").hide();
 	$("#confirmTrain").hide();
 	$("#leaveTrain").hide();
+	$("#berries").hide();
 
 	//checks if the user clicked on create trainer
 	$("#create").on("click", function()
@@ -40,6 +41,7 @@ $(document).ready(function()
 		$("#trainingSession").hide();
 		$("#confirmTrain").hide();
 		$("#leaveTrain").hide();
+		$("#berries").hide();
 	});
 
 	//checks if the user clicked on choose starter
@@ -190,8 +192,9 @@ $(document).ready(function()
 			$("#leaveTrain").hide();
 			$("#thanksOak").show();
 			$("#accept").hide();
+			$("#berries").show();
 			
-			$("#accept").on("click", function()
+			$("#thanksOak").on("click", function()
 			{
 				$("#close").hide();
 				$("#pokemonEncounter").hide();
@@ -203,9 +206,22 @@ $(document).ready(function()
 				$("#train").show();
 				$("#fight").show();
 				$("#controls").show();
+				$("#berries").show()
 				$("#exit").show();
 			});
 		});
+
+		$("#leaveTrain").on("click", function()
+        {
+            $(".center").hide();
+            $("#create").show();
+            $("#choose").show();
+            $("#catch").show();
+            $("#train").show();
+            $("#fight").show();
+            $("#controls").show();
+            $("#exit").show();
+        });
 	});
 	//checks if the user clicked on fight
 
