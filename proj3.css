@@ -249,3 +249,33 @@ p
 	margin-top: 190px;
 	size: 30px;
 }
+
+#trainPokemon
+{
+	display: none;
+}
+
+#pokemonChoice
+{
+	display: none;
+}
+
+#trainingSession
+{
+	display:none;
+}
+
+#confirmTrain
+{
+	display: none;
+}
+
+#leaveTrain
+{
+	display: none;
+}
+
+#thanksOak
+{
+	display: none;
+}

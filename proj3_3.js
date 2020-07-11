@@ -10,6 +10,11 @@ $(document).ready(function()
 	$("#pokemonEncounter").hide();
 	$("#caughtPokemon").hide();
 	$("#accept").hide();
+	$("#trainPokemon").hide();
+	$("#pokemonChoice").hide();
+	$("#trainingSession").hide();
+	$("#confirmTrain").hide();
+	$("#leaveTrain").hide();
 
 	//checks if the user clicked on create trainer
 	$("#create").on("click", function()
@@ -30,6 +35,11 @@ $(document).ready(function()
 		$("#catchPokemon").hide();
 		$("#runAway").hide();
 		$("#pokemonEncounter").hide();
+		$("#trainPokemon").hide();
+		$("#pokemonChoice").hide();
+		$("#trainingSession").hide();
+		$("#confirmTrain").hide();
+		$("#leaveTrain").hide();
 	});
 
 	//checks if the user clicked on choose starter
@@ -51,6 +61,11 @@ $(document).ready(function()
 		$("#catchPokemon").hide();
 		$("#runAway").hide();
 		$("#pokemonEncounter").hide();
+		$("#trainPokemon").hide();
+		$("#pokemonChoice").hide();
+		$("#trainingSession").hide();
+		$("#confirmTrain").hide();
+		$("#leaveTrain").hide();
 	});
 
 	//checks if the user clicked the close button
@@ -68,6 +83,11 @@ $(document).ready(function()
 		$("#fight").show();
 		$("#controls").show();
 		$("#exit").show();
+		$("#trainPokemon").hide();
+		$("#pokemonChoice").hide();
+		$("#trainingSession").hide();
+		$("#confirmTrain").hide();
+		$("#leaveTrain").hide();
 	});
 
 	//checks if the user clicked on catch
@@ -87,6 +107,12 @@ $(document).ready(function()
 		$("#exit").hide();
 		$("#dupeTrainer").hide();
 		$("#dupeStarter").hide();
+		$("#trainPokemon").hide();
+		$("#pokemonChoice").hide();
+		$("#trainingSession").hide();
+		$("#confirmTrain").hide();
+		$("#leaveTrain").hide();
+		$("#accept").hide();
 
 		//if the user chooses to try to catch the wild pokemon
 		$("#catchPokemon").on("click", function()
@@ -101,6 +127,7 @@ $(document).ready(function()
 			$("#accept").on("click", function()
 			{
 				$("#close").hide();
+				$("#accept").hide();
 				$("#pokemonEncounter").hide();
 				$(".center").hide();
 				$("#oak").hide();
@@ -133,7 +160,7 @@ $(document).ready(function()
 	{
 		$(".center").show();
 		$("#oak").show();
-		$("#close").show();
+		$("#close").hide();
 		$("#currentPokemon").show();
 		$("#create").hide();
 		$("#choose").hide();
@@ -147,8 +174,39 @@ $(document).ready(function()
 		$("#encounter").hide();
 		$("#catchPokemon").hide();
 		$("#runAway").hide();
-	});
+		$("#trainPokemon").show();
+		$("#trainingSession").hide();
+		$("#confirmTrain").show();
+		$("#leaveTrain").show();
+		$("#thanksOak").hide();
 
+
+		$("#confirmTrain").on("click", function()
+		{
+			$("#pokemonChoice").show();
+			$("#trainingSession").show();
+			$("#trainPokemon").hide();
+			$("#confirmTrain").hide();
+			$("#leaveTrain").hide();
+			$("#thanksOak").show();
+			$("#accept").hide();
+			
+			$("#accept").on("click", function()
+			{
+				$("#close").hide();
+				$("#pokemonEncounter").hide();
+				$(".center").hide();
+				$("#oak").hide();
+				$("#create").show();
+				$("#choose").show();
+				$("#catch").show();
+				$("#train").show();
+				$("#fight").show();
+				$("#controls").show();
+				$("#exit").show();
+			});
+		});
+	});
 	//checks if the user clicked on fight
 
 	//checks if the user clicked on controls
